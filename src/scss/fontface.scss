@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Gowun Batang';
+  src:
+    url('../assets/fonts/GowunBatang-Regular.woff2') format('woff2'),
+    url('../assets/fonts/GowunBatang-Regular.woff') format('woff');
+  font-weight: normal; /* Regular 버전 */
+}
+
+@font-face {
+  font-family: 'Gowun Batang';
+  src:
+    url('../assets/fonts/GowunBatang-Bold.woff2') format('woff2'),
+    url('../assets/fonts/GowunBatang-Bold.woff') format('woff');
+  font-weight: bold; /* Bold 버전 */
+}
