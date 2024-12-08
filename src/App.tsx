@@ -1,12 +1,14 @@
 import classNames from 'classnames/bind'
 import styles from './App.module.scss'
 import { useEffect, useState } from 'react'
-import FullScreenMessage from './components/shared/FullScreenMessage'
+import FullScreenMessage from '@shared/FullScreenMessage'
+import Heading from './components/sections/Heading'
+import { Wedding } from '@models/wedding'
 
 const cx = classNames.bind(styles)
 
 function App() {
-  const [wedding, setWedding] = useState(null)
+  const [wedding, setWedding] = useState<Wedding | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
@@ -38,7 +40,16 @@ function App() {
   if (error) {
     return <FullScreenMessage type={'error'} />
   }
-  return <div className={cx('container')}></div>
+
+  if (wedding === null) return null
+
+  const { date } = wedding
+
+  return (
+    <div className={cx('container')}>
+      <Heading date={date} />
+    </div>
+  )
 }
 
 export default App
